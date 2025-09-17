@@ -4,12 +4,13 @@ public:
         int maxFreq=0;
         int maxCount=0;
         int i=0;
-        unordered_map<char,int> mpp;
+        int freq[26] = {0};
+
         for(int j=0;j<s.size();j++){
-            mpp[s[j]]++;
-            maxFreq=max(maxFreq,(mpp[s[j]]));
+            freq[s[j]-'A']++;
+            maxFreq=max(maxFreq,(freq[s[j]-'A']));
             while((j-i+1)-maxFreq>k){
-                mpp[s[i]]--;
+                freq[s[i]-'A']--;
                 i++;
             }
         maxCount=max(maxCount,(j-i+1));
