@@ -28,6 +28,8 @@ public:
             }
         }
         int total = 0;
+        int mini = INT_MAX;
+        int minCity = -1;
         for (int i = 0; i < matrix.size(); i++) {
             for (int j = 0; j < matrix.size(); j++) {
                 if (matrix[i][j] <= distanceThreshold && i != j) {
@@ -37,10 +39,6 @@ public:
                     matrix[i][j] = -1;
                 }
             }
-        }
-        int mini = INT_MAX;
-        int minCity = -1;
-        for (int i = 0; i < reach.size(); i++) {
             if (mini >= reach[i]) {
                 mini = reach[i];
                 minCity = i;
