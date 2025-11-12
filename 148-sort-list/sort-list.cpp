@@ -11,34 +11,20 @@
 class Solution {
 public:
     ListNode* mergeTwo(ListNode* list1, ListNode* list2) {
-        ListNode* first = list1;
-        ListNode* second = list2;
-
-        ListNode* newHead = new ListNode();
-        ListNode* merged = newHead;
-
-        while (first && second) {
-            if (first->val <= second->val) {
-                merged->next = first;
-                first = first->next;
-                merged = merged->next;
+        ListNode* dummy = new ListNode();
+        ListNode* tail = dummy;
+        while (list1 && list2) {
+            if (list1->val <= list2->val) {
+                tail->next = list1;
+                list1 = list1->next;
             } else {
-                merged->next = second;
-                second = second->next;
-                merged = merged->next;
+                tail->next = list2;
+                list2 = list2->next;
             }
+            tail = tail->next;
         }
-        while (first) {
-            merged->next = first;
-            first = first->next;
-            merged = merged->next;
-        }
-        while (second) {
-            merged->next = second;
-            second = second->next;
-            merged = merged->next;
-        }
-        return newHead->next;
+        tail->next = list1 ? list1 : list2;
+        return dummy->next;
     }
 
     ListNode* findMiddle(ListNode* head) {
