@@ -1,49 +1,32 @@
-# 11. Container With Most Water
+<h2><a href="https://leetcode.com/problems/container-with-most-water">Container With Most Water</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given an integer array <code>height</code> of length <code>n</code>. There are <code>n</code> vertical lines drawn such that the two endpoints of the <code>i<sup>th</sup></code> line are <code>(i, 0)</code> and <code>(i, height[i])</code>.</p>
 
-## Problem Statement
+<p>Find two lines that together with the x-axis form a container, such that the container contains the most water.</p>
 
-You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
+<p>Return <em>the maximum amount of water a container can store</em>.</p>
 
-Find two lines that together with the x-axis form a container, such that the container contains the most water.
+<p><strong>Notice</strong> that you may not slant the container.</p>
 
-Return the maximum amount of water a container can store.
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg" style="width: 600px; height: 287px;" />
+<pre>
+<strong>Input:</strong> height = [1,8,6,2,5,4,8,3,7]
+<strong>Output:</strong> 49
+<strong>Explanation:</strong> The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+</pre>
 
-Notice that you may not slant the container.
+<p><strong class="example">Example 2:</strong></p>
 
-Example 1:
+<pre>
+<strong>Input:</strong> height = [1,1]
+<strong>Output:</strong> 1
+</pre>
 
-Input: height = [1,8,6,2,5,4,8,3,7]
-Output: 49
-Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-Example 2:
-
-Input: height = [1,1]
-Output: 1
-
-Constraints:
-
-	n == height.length
-	2 <= n <= 105
-	0 <= height[i] <= 104
-
-## Solution
-
-The solution is implemented in C++ and can be found in the `solution.cpp` file.
-
-## Complexity Analysis
-
-- **Time Complexity:** O(?) - Please analyze and update
-- **Space Complexity:** O(?) - Please analyze and update
-
-## Tags
-
-*Medium*
-
-## LeetCode Link
-
-[11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
-
----
-
-*This solution was automatically downloaded from LeetCode.*
+<ul>
+	<li><code>n == height.length</code></li>
+	<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
+	<li><code>0 &lt;= height[i] &lt;= 10<sup>4</sup></code></li>
+</ul>
