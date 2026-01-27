@@ -10,25 +10,25 @@ public:
         }
         if (target % 2 != 0)
             return false;
-        vector<vector<bool>> dp(n, vector<bool>((target / 2) + 1, false));
+        vector<bool> prev((target / 2) + 1, false);
 
-        for (int i = 0; i < n; i++) {
-            dp[i][0] = true;
-        }
+        prev[0] = true;
 
         if (arr[0] <= target / 2) {
-            dp[0][arr[0]] = true;
+            prev[arr[0]] = true;
         }
         for (int index = 1; index < n; index++) {
+            vector<bool> curr((target / 2) + 1, false);
             for (int k = 1; k <= target / 2; k++) {
+
                 if (arr[index] <= k) {
-                    dp[index][k] =
-                        dp[index - 1][k] || dp[index - 1][k - arr[index]];
+                    curr[k] = prev[k] || prev[k - arr[index]];
                 } else {
-                    dp[index][k] = dp[index - 1][k];
-                } 
+                    curr[k] = prev[k];
+                }
             }
+            prev = curr;
         }
-        return dp[n - 1][target / 2];
+        return prev[target / 2];
     }
 };
