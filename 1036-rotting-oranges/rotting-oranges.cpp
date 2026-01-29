@@ -27,7 +27,6 @@ public:
         int steps=1;
         int time = 0;
         while (!q.empty()) {
-        int count=fresh;
             int size = q.size();
             while (size--) {
                 auto node = q.front();
@@ -48,7 +47,7 @@ public:
                 }
             }
             if(fresh==0) return steps;
-            if(fresh!=count) steps++;
+            steps++;
         }
         
         for (int i = 0; i < n; i++) {
