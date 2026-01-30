@@ -1,50 +1,31 @@
-# 162. Find Peak Element
+<h2><a href="https://leetcode.com/problems/find-peak-element">Find Peak Element</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>A peak element is an element that is strictly greater than its neighbors.</p>
 
-## Problem Statement
+<p>Given a <strong>0-indexed</strong> integer array <code>nums</code>, find a peak element, and return its index. If the array contains multiple peaks, return the index to <strong>any of the peaks</strong>.</p>
 
-A peak element is an element that is strictly greater than its neighbors.
+<p>You may imagine that <code>nums[-1] = nums[n] = -&infin;</code>. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array.</p>
 
-Given a 0-indexed integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.
+<p>You must write an algorithm that runs in <code>O(log n)</code> time.</p>
 
-You may imagine that nums[-1] = nums[n] = -&infin;. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array.
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-You must write an algorithm that runs in O(log n) time.
+<pre>
+<strong>Input:</strong> nums = [1,2,3,1]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 3 is a peak element and your function should return the index number 2.</pre>
 
-Example 1:
+<p><strong class="example">Example 2:</strong></p>
 
-Input: nums = [1,2,3,1]
-Output: 2
-Explanation: 3 is a peak element and your function should return the index number 2.
+<pre>
+<strong>Input:</strong> nums = [1,2,1,3,5,6,4]
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.</pre>
 
-Example 2:
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-Input: nums = [1,2,1,3,5,6,4]
-Output: 5
-Explanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.
-
-Constraints:
-
-	1 <= nums.length <= 1000
-	-231 <= nums[i] <= 231 - 1
-	nums[i] != nums[i + 1] for all valid i.
-
-## Solution
-
-The solution is implemented in C++ and can be found in the `solution.cpp` file.
-
-## Complexity Analysis
-
-- **Time Complexity:** O(?) - Please analyze and update
-- **Space Complexity:** O(?) - Please analyze and update
-
-## Tags
-
-*Medium*
-
-## LeetCode Link
-
-[162. Find Peak Element](https://leetcode.com/problems/find-peak-element/)
-
----
-
-*This solution was automatically downloaded from LeetCode.*
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+	<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>
+	<li><code>nums[i] != nums[i + 1]</code> for all valid <code>i</code>.</li>
+</ul>
