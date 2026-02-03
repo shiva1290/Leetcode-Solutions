@@ -1,33 +1,21 @@
 class Solution {
     int M = 1e9 + 7;
-    // int helper(int n,vector<int>&dp){
-    //     if(n==0){
-    //         return 1;
-    //     }
-    //     if(n==1){
-    //         return 1;
-    //     }
-    //     if(n==2){
-    //         return 2;
-    //     }
-    //     if(dp[n]!=-1){
-    //         return dp[n];
-    //     }
-    //     return dp[n]=(2*helper(n-1,dp)%M+helper(n-3,dp)%M)%M;
-    // }
 public:
     int numTilings(int n) {
-        if (n == 1 || n == 2)
-            return n;
-        if (n == 0)
-            return 1;
-        vector<int> dp(n + 1, -1);
-        dp[0] = 1;
-        dp[1] = 1;
-        dp[2] = 2;
-        for (int i = 3; i <= n; i++) {
-            dp[i] = (2 * dp[i - 1] % M + dp[i - 3] % M) % M;
+        const int mod = 1e9 + 7;
+        long long f[4] = {1, 0, 0, 0};
+        for (int i = 1; i <= n; ++i) {
+            long long g[4];
+            g[0] = (f[0] + f[1] + f[2] + f[3]) % mod;
+            g[1] = (f[2] + f[3]) % mod;
+            g[2] = (f[1] + f[3]) % mod;
+            g[3] = f[0];
+            
+            f[0] = g[0];
+            f[1] = g[1];
+            f[2] = g[2];
+            f[3] = g[3];
         }
-        return dp[n];
+        return f[0];
     }
 };
