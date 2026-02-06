@@ -1,31 +1,26 @@
 class Solution {
 public:
-     public:
-    int helper(int index, vector<int>& nums, int amount,
-               vector<vector<int>>& dp) {
-        if(amount==0){
-          return 1;
-        }
-        if(amount<0){
-          return 0;
-        }
-        if (index == nums.size()) {
-            return amount==0;
+    int change(int amount, vector<int>& coins) {
+        vector<unsigned long long> dp(amount + 1, 0);
+
+        for (int i = 0; i <= amount; i++) {
+            if (i % coins[0] == 0) {
+                dp[i] = 1;
+            }
         }
 
-        if (dp[index][amount] != -1) {
-            return dp[index][amount];
+        for (int index = 1; index < coins.size(); index++) {
+            vector<unsigned long long> curr(amount + 1, 0);
+            curr[0] = 1;
+            for (int amt = 1; amt <= amount; amt++) {
+                unsigned long long add = 0;
+                if (amt >= coins[index])
+                    add = curr[amt - coins[index]];
+                unsigned long long ignore = dp[amt];
+                curr[amt] = (add + ignore);
+            }
+            dp = curr;
         }
-
-        int add = helper(index, nums, amount-nums[index], dp);
-        int ignore = helper(index + 1, nums, amount, dp);
-
-        return dp[index][amount] = (add+ignore);
-    }
-
-    int change(int amount,vector<int>& coins) {
-        int N=coins.size();
-        vector<vector<int>> dp(N, vector<int>(amount + 1, -1));
-        return helper(0, coins, amount, dp);
+        return (int)dp[amount];
     }
 };
