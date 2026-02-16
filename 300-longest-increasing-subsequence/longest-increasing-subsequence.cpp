@@ -1,22 +1,29 @@
 class Solution {
 public:
-    int helper(int index, vector<int>& nums, int lastEle,
-               vector<vector<int>>& dp) {
-        if (index >= nums.size()) {
-            return 0;
+    int lowerBound(int number, vector<int>& arr) {
+        int low = 0;
+        int high = arr.size() - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] >= number) {
+                high = mid - 1;
+            } else
+                low = mid + 1;
         }
-        if (dp[index][lastEle + 1] != -1) {
-            return dp[index][lastEle + 1];
-        }
-        int take = 0;
-        if (lastEle == -1 || nums[lastEle] < nums[index])
-            take = 1 + helper(index + 1, nums, index, dp);
-        int notTake = helper(index + 1, nums, lastEle, dp);
-        return dp[index][lastEle + 1] = max(take, notTake);
+        return low;
     }
 
     int lengthOfLIS(vector<int>& nums) {
-         vector<vector<int>> dp(nums.size(), vector<int>(nums.size() + 1, -1));
-        return helper(0, nums, -1, dp);
+        vector<int> lenArray;
+        lenArray.push_back(nums[0]);
+        for (int i = 1; i < nums.size(); i++) {
+            if (lenArray.back() < nums[i]) {
+                lenArray.push_back(nums[i]);
+            } else {
+                int index = lowerBound(nums[i], lenArray);
+                lenArray[index] = nums[i];
+            }
+        }
+        return lenArray.size();
     }
 };
