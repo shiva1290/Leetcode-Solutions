@@ -1,46 +1,31 @@
-# 152. Maximum Product Subarray
+<h2><a href="https://leetcode.com/problems/maximum-product-subarray">Maximum Product Subarray</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given an integer array <code>nums</code>, find a <span data-keyword="subarray-nonempty">subarray</span> that has the largest product, and return <em>the product</em>.</p>
 
-## Problem Statement
+<p>The test cases are generated so that the answer will fit in a <strong>32-bit</strong> integer.</p>
 
-Given an integer array nums, find a subarray that has the largest product, and return the product.
+<p><strong>Note</strong> that the product of an array with a single element is the value of that element.</p>
 
-The test cases are generated so that the answer will fit in a 32-bit integer.
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-Example 1:
+<pre>
+<strong>Input:</strong> nums = [2,3,-2,4]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> [2,3] has the largest product 6.
+</pre>
 
-Input: nums = [2,3,-2,4]
-Output: 6
-Explanation: [2,3] has the largest product 6.
+<p><strong class="example">Example 2:</strong></p>
 
-Example 2:
+<pre>
+<strong>Input:</strong> nums = [-2,0,-1]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> The result cannot be 2, because [-2,-1] is not a subarray.
+</pre>
 
-Input: nums = [-2,0,-1]
-Output: 0
-Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-Constraints:
-
-	1 <= nums.length <= 2 * 104
-	-10 <= nums[i] <= 10
-	The product of any subarray of nums is guaranteed to fit in a 32-bit integer.
-
-## Solution
-
-The solution is implemented in C++ and can be found in the `solution.cpp` file.
-
-## Complexity Analysis
-
-- **Time Complexity:** O(?) - Please analyze and update
-- **Space Complexity:** O(?) - Please analyze and update
-
-## Tags
-
-*Medium*
-
-## LeetCode Link
-
-[152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
-
----
-
-*This solution was automatically downloaded from LeetCode.*
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 2 * 10<sup>4</sup></code></li>
+	<li><code>-10 &lt;= nums[i] &lt;= 10</code></li>
+	<li>The product of any subarray of <code>nums</code> is <strong>guaranteed</strong> to fit in a <strong>32-bit</strong> integer.</li>
+</ul>
