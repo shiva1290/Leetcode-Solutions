@@ -1,48 +1,34 @@
-# 229. Majority Element II
+<h2><a href="https://leetcode.com/problems/majority-element-ii">Majority Element II</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given an integer array of size <code>n</code>, find all elements that appear more than <code>&lfloor; n/3 &rfloor;</code> times.</p>
 
-## Problem Statement
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-Given an integer array of size n, find all elements that appear more than &lfloor; n/3 &rfloor; times.
+<pre>
+<strong>Input:</strong> nums = [3,2,3]
+<strong>Output:</strong> [3]
+</pre>
 
-Example 1:
+<p><strong class="example">Example 2:</strong></p>
 
-Input: nums = [3,2,3]
-Output: [3]
+<pre>
+<strong>Input:</strong> nums = [1]
+<strong>Output:</strong> [1]
+</pre>
 
-Example 2:
+<p><strong class="example">Example 3:</strong></p>
 
-Input: nums = [1]
-Output: [1]
+<pre>
+<strong>Input:</strong> nums = [1,2]
+<strong>Output:</strong> [1,2]
+</pre>
 
-Example 3:
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-Input: nums = [1,2]
-Output: [1,2]
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 5 * 10<sup>4</sup></code></li>
+	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
 
-Constraints:
-
-	1 <= nums.length <= 5 * 104
-	-109 <= nums[i] <= 109
-
-Follow up: Could you solve the problem in linear time and in O(1) space?
-
-## Solution
-
-The solution is implemented in C++ and can be found in the `solution.cpp` file.
-
-## Complexity Analysis
-
-- **Time Complexity:** O(?) - Please analyze and update
-- **Space Complexity:** O(?) - Please analyze and update
-
-## Tags
-
-*Medium*
-
-## LeetCode Link
-
-[229. Majority Element II](https://leetcode.com/problems/majority-element-ii/)
-
----
-
-*This solution was automatically downloaded from LeetCode.*
+<p>&nbsp;</p>
+<p><strong>Follow up:</strong> Could you solve the problem in linear time and in <code>O(1)</code> space?</p>
