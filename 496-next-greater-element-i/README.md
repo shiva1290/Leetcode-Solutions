@@ -1,58 +1,42 @@
-# 496. Next Greater Element I
+<h2><a href="https://leetcode.com/problems/next-greater-element-i">Next Greater Element I</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>The <strong>next greater element</strong> of some element <code>x</code> in an array is the <strong>first greater</strong> element that is <strong>to the right</strong> of <code>x</code> in the same array.</p>
 
-## Problem Statement
+<p>You are given two <strong>distinct 0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code>, where <code>nums1</code> is a subset of <code>nums2</code>.</p>
 
-The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.
+<p>For each <code>0 &lt;= i &lt; nums1.length</code>, find the index <code>j</code> such that <code>nums1[i] == nums2[j]</code> and determine the <strong>next greater element</strong> of <code>nums2[j]</code> in <code>nums2</code>. If there is no next greater element, then the answer for this query is <code>-1</code>.</p>
 
-You are given two distinct 0-indexed integer arrays nums1 and nums2, where nums1 is a subset of nums2.
+<p>Return <em>an array </em><code>ans</code><em> of length </em><code>nums1.length</code><em> such that </em><code>ans[i]</code><em> is the <strong>next greater element</strong> as described above.</em></p>
 
-For each 0 <= i < nums1.length, find the index j such that nums1[i] == nums2[j] and determine the next greater element of nums2[j] in nums2. If there is no next greater element, then the answer for this query is -1.
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-Return an array ans of length nums1.length such that ans[i] is the next greater element as described above.
+<pre>
+<strong>Input:</strong> nums1 = [4,1,2], nums2 = [1,3,4,2]
+<strong>Output:</strong> [-1,3,-1]
+<strong>Explanation:</strong> The next greater element for each value of nums1 is as follows:
+- 4 is underlined in nums2 = [1,3,<u>4</u>,2]. There is no next greater element, so the answer is -1.
+- 1 is underlined in nums2 = [<u>1</u>,3,4,2]. The next greater element is 3.
+- 2 is underlined in nums2 = [1,3,4,<u>2</u>]. There is no next greater element, so the answer is -1.
+</pre>
 
-Example 1:
+<p><strong class="example">Example 2:</strong></p>
 
-Input: nums1 = [4,1,2], nums2 = [1,3,4,2]
-Output: [-1,3,-1]
-Explanation: The next greater element for each value of nums1 is as follows:
-- 4 is underlined in nums2 = [1,3,4,2]. There is no next greater element, so the answer is -1.
-- 1 is underlined in nums2 = [1,3,4,2]. The next greater element is 3.
-- 2 is underlined in nums2 = [1,3,4,2]. There is no next greater element, so the answer is -1.
+<pre>
+<strong>Input:</strong> nums1 = [2,4], nums2 = [1,2,3,4]
+<strong>Output:</strong> [3,-1]
+<strong>Explanation:</strong> The next greater element for each value of nums1 is as follows:
+- 2 is underlined in nums2 = [1,<u>2</u>,3,4]. The next greater element is 3.
+- 4 is underlined in nums2 = [1,2,3,<u>4</u>]. There is no next greater element, so the answer is -1.
+</pre>
 
-Example 2:
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-Input: nums1 = [2,4], nums2 = [1,2,3,4]
-Output: [3,-1]
-Explanation: The next greater element for each value of nums1 is as follows:
-- 2 is underlined in nums2 = [1,2,3,4]. The next greater element is 3.
-- 4 is underlined in nums2 = [1,2,3,4]. There is no next greater element, so the answer is -1.
+<ul>
+	<li><code>1 &lt;= nums1.length &lt;= nums2.length &lt;= 1000</code></li>
+	<li><code>0 &lt;= nums1[i], nums2[i] &lt;= 10<sup>4</sup></code></li>
+	<li>All integers in <code>nums1</code> and <code>nums2</code> are <strong>unique</strong>.</li>
+	<li>All the integers of <code>nums1</code> also appear in <code>nums2</code>.</li>
+</ul>
 
-Constraints:
-
-	1 <= nums1.length <= nums2.length <= 1000
-	0 <= nums1[i], nums2[i] <= 104
-	All integers in nums1 and nums2 are unique.
-	All the integers of nums1 also appear in nums2.
-
-Follow up: Could you find an O(nums1.length + nums2.length) solution?
-
-## Solution
-
-The solution is implemented in C++ and can be found in the `solution.cpp` file.
-
-## Complexity Analysis
-
-- **Time Complexity:** O(?) - Please analyze and update
-- **Space Complexity:** O(?) - Please analyze and update
-
-## Tags
-
-*Easy*
-
-## LeetCode Link
-
-[496. Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/)
-
----
-
-*This solution was automatically downloaded from LeetCode.*
+<p>&nbsp;</p>
+<strong>Follow up:</strong> Could you find an <code>O(nums1.length + nums2.length)</code> solution?
