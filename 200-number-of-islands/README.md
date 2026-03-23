@@ -1,55 +1,38 @@
-# 200. Number of Islands
+<h2><a href="https://leetcode.com/problems/number-of-islands">Number of Islands</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given an <code>m x n</code> 2D binary grid <code>grid</code> which represents a map of <code>&#39;1&#39;</code>s (land) and <code>&#39;0&#39;</code>s (water), return <em>the number of islands</em>.</p>
 
-## Problem Statement
+<p>An <strong>island</strong> is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.</p>
 
-Given an m x n 2D binary grid grid which represents a map of &#39;1&#39;s (land) and &#39;0&#39;s (water), return the number of islands.
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
-
-Example 1:
-
-Input: grid = [
-  ["1","1","1","1","0"],
-  ["1","1","0","1","0"],
-  ["1","1","0","0","0"],
-  ["0","0","0","0","0"]
+<pre>
+<strong>Input:</strong> grid = [
+  [&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;0&quot;],
+  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;],
+  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],
+  [&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;]
 ]
-Output: 1
+<strong>Output:</strong> 1
+</pre>
 
-Example 2:
+<p><strong class="example">Example 2:</strong></p>
 
-Input: grid = [
-  ["1","1","0","0","0"],
-  ["1","1","0","0","0"],
-  ["0","0","1","0","0"],
-  ["0","0","0","1","1"]
+<pre>
+<strong>Input:</strong> grid = [
+  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],
+  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],
+  [&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;],
+  [&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;1&quot;]
 ]
-Output: 3
+<strong>Output:</strong> 3
+</pre>
 
-Constraints:
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-	m == grid.length
-	n == grid[i].length
-	1 <= m, n <= 300
-	grid[i][j] is &#39;0&#39; or &#39;1&#39;.
-
-## Solution
-
-The solution is implemented in C++ and can be found in the `solution.cpp` file.
-
-## Complexity Analysis
-
-- **Time Complexity:** O(?) - Please analyze and update
-- **Space Complexity:** O(?) - Please analyze and update
-
-## Tags
-
-*Medium*
-
-## LeetCode Link
-
-[200. Number of Islands](https://leetcode.com/problems/number-of-islands/)
-
----
-
-*This solution was automatically downloaded from LeetCode.*
+<ul>
+	<li><code>m == grid.length</code></li>
+	<li><code>n == grid[i].length</code></li>
+	<li><code>1 &lt;= m, n &lt;= 300</code></li>
+	<li><code>grid[i][j]</code> is <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code>.</li>
+</ul>
