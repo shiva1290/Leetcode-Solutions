@@ -1,19 +1,17 @@
 class Solution {
 public:
-    int longestCommonSubsequence(string str1, string str2) {
-        vector<int>dp(str2.size() + 1, 0);
-        for (int ind1 = str1.size() - 1; ind1 >= 0; ind1--) {
-            vector<int>temp(str2.size()+1,0);
-            for (int ind2 = str2.size() - 1; ind2 >= 0; ind2--) {
-                if (str1[ind1] == str2[ind2]) {
-                    temp[ind2] = 1 + dp[ind2 + 1];
-                } else {
-                    temp[ind2] =
-                        max(dp[ind2],temp[ind2 + 1]);
-                }
-            }
-            dp=temp;
-        }
-        return dp[0];
+    int helper(int idx1, int idx2, string & text1, string &text2,vector<vector<int>>&dp){
+        if(idx1>=text1.size() || idx2>=text2.size()) return 0;
+        if(dp[idx1][idx2]!=-1) return dp[idx1][idx2];
+        int match=INT_MIN;
+        int move1,move2;
+        if(text1[idx1]==text2[idx2]) match=1+helper(idx1+1,idx2+1,text1,text2,dp);
+        move1=helper(idx1+1,idx2,text1,text2,dp);
+        move2=helper(idx1,idx2+1,text1,text2,dp);
+        return dp[idx1][idx2]=max(match,max(move1,move2));
+    }
+    int longestCommonSubsequence(string text1, string text2) {
+        vector<vector<int>>dp(text1.size()+1,vector<int>(text2.size(),-1));
+        return helper(0,0,text1,text2,dp);
     }
 };
