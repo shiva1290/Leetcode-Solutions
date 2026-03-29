@@ -1,45 +1,28 @@
-# 55. Jump Game
+<h2><a href="https://leetcode.com/problems/jump-game">Jump Game</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given an integer array <code>nums</code>. You are initially positioned at the array&#39;s <strong>first index</strong>, and each element in the array represents your maximum jump length at that position.</p>
 
-## Problem Statement
+<p>Return <code>true</code><em> if you can reach the last index, or </em><code>false</code><em> otherwise</em>.</p>
 
-You are given an integer array nums. You are initially positioned at the array&#39;s first index, and each element in the array represents your maximum jump length at that position.
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-Return true if you can reach the last index, or false otherwise.
+<pre>
+<strong>Input:</strong> nums = [2,3,1,1,4]
+<strong>Output:</strong> true
+<strong>Explanation:</strong> Jump 1 step from index 0 to 1, then 3 steps to the last index.
+</pre>
 
-Example 1:
+<p><strong class="example">Example 2:</strong></p>
 
-Input: nums = [2,3,1,1,4]
-Output: true
-Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+<pre>
+<strong>Input:</strong> nums = [3,2,1,0,4]
+<strong>Output:</strong> false
+<strong>Explanation:</strong> You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
+</pre>
 
-Example 2:
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-Input: nums = [3,2,1,0,4]
-Output: false
-Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
-
-Constraints:
-
-	1 <= nums.length <= 104
-	0 <= nums[i] <= 105
-
-## Solution
-
-The solution is implemented in C++ and can be found in the `solution.cpp` file.
-
-## Complexity Analysis
-
-- **Time Complexity:** O(?) - Please analyze and update
-- **Space Complexity:** O(?) - Please analyze and update
-
-## Tags
-
-*Medium*
-
-## LeetCode Link
-
-[55. Jump Game](https://leetcode.com/problems/jump-game/)
-
----
-
-*This solution was automatically downloaded from LeetCode.*
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
