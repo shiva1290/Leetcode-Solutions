@@ -1,50 +1,35 @@
-# 50. Pow(x, n)
+<h2><a href="https://leetcode.com/problems/powx-n">Pow(x, n)</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Implement <a href="http://www.cplusplus.com/reference/valarray/pow/" target="_blank">pow(x, n)</a>, which calculates <code>x</code> raised to the power <code>n</code> (i.e., <code>x<sup>n</sup></code>).</p>
 
-## Problem Statement
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
+<pre>
+<strong>Input:</strong> x = 2.00000, n = 10
+<strong>Output:</strong> 1024.00000
+</pre>
 
-Example 1:
+<p><strong class="example">Example 2:</strong></p>
 
-Input: x = 2.00000, n = 10
-Output: 1024.00000
+<pre>
+<strong>Input:</strong> x = 2.10000, n = 3
+<strong>Output:</strong> 9.26100
+</pre>
 
-Example 2:
+<p><strong class="example">Example 3:</strong></p>
 
-Input: x = 2.10000, n = 3
-Output: 9.26100
+<pre>
+<strong>Input:</strong> x = 2.00000, n = -2
+<strong>Output:</strong> 0.25000
+<strong>Explanation:</strong> 2<sup>-2</sup> = 1/2<sup>2</sup> = 1/4 = 0.25
+</pre>
 
-Example 3:
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-Input: x = 2.00000, n = -2
-Output: 0.25000
-Explanation: 2-2 = 1/22 = 1/4 = 0.25
-
-Constraints:
-
-	-100.0 < x < 100.0
-	-231 <= n <= 231-1
-	n is an integer.
-	Either x is not zero or n > 0.
-	-104 <= xn <= 104
-
-## Solution
-
-The solution is implemented in C++ and can be found in the `solution.cpp` file.
-
-## Complexity Analysis
-
-- **Time Complexity:** O(?) - Please analyze and update
-- **Space Complexity:** O(?) - Please analyze and update
-
-## Tags
-
-*Medium*
-
-## LeetCode Link
-
-[50. Pow(x, n)](https://leetcode.com/problems/powx-n/)
-
----
-
-*This solution was automatically downloaded from LeetCode.*
+<ul>
+	<li><code>-100.0 &lt; x &lt; 100.0</code></li>
+	<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup>-1</code></li>
+	<li><code>n</code> is an integer.</li>
+	<li>Either <code>x</code> is not zero or <code>n &gt; 0</code>.</li>
+	<li><code>-10<sup>4</sup> &lt;= x<sup>n</sup> &lt;= 10<sup>4</sup></code></li>
+</ul>
