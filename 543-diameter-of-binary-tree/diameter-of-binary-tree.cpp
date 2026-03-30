@@ -12,9 +12,9 @@
 class Solution {
 public:
     int DFS(TreeNode* root,int &diameter){
-        if(!root) return 0;
-        int left=DFS(root->left,diameter);
-        int right=DFS(root->right,diameter);
+       if(!root) return 0;
+       int left=DFS(root->left,diameter);
+       int right=DFS(root->right,diameter);
         diameter=max(diameter,left+right);
         return max(left,right)+1;
     }
