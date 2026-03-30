@@ -1,42 +1,40 @@
 class Solution {
 public:
-    int dijkstra(vector<vector<int>>& times, int n, int k) {
-        priority_queue<pair<int, int>, vector<pair<int, int>>,
-                       greater<pair<int, int>>>
-            pq;
-        pq.push({0, k - 1});
-        vector<vector<pair<int, int>>> adj(n);
-        for (int i = 0; i < times.size(); i++) {
-            int parent = times[i][0] - 1;
-            int neigh = times[i][1] - 1;
-            int weight = times[i][2];
-            adj[parent].push_back({neigh, weight});
-        }
-
-        vector<int> distance(n, 1e9);
-        distance[k - 1] = 0;
-        while (!pq.empty()) {
-            auto p = pq.top();
+    vector<int> shortest(vector<vector<pair<int,int>>>&adj,int s){
+        priority_queue <pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
+        vector<int>dist(adj.size(),1e5);
+        dist[s]=0;
+        pq.push({0,s});
+        while(!pq.empty()){
+            auto p=pq.top();
             pq.pop();
-            int node = p.second;
-            int dist = p.first;
-            for (auto it : adj[node]) {
-                int distanceHere = it.second;
-                if (dist + distanceHere < distance[it.first]) {
-                    distance[it.first] = dist + distanceHere;
-                    pq.push({distance[it.first], it.first});
+            int wt=p.first;
+            int node=p.second;
+            for(auto it : adj[node]){
+                int currNode=it.first;
+                int distanceHere=it.second;
+                if(wt+distanceHere<dist[currNode]){
+                    dist[currNode]=wt+distanceHere;
+                    pq.push({dist[currNode],currNode});
                 }
             }
         }
-        int ans = 0;
-        for (int i = 0; i < n; i++) {
-            if (distance[i] == 1e9)
-                return -1;
-            ans = max(ans, distance[i]);
-        }
-        return ans;
+        return dist;
     }
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
-        return dijkstra(times, n, k);
+        vector<vector<pair<int,int>>>adj(n);
+        for(int i=0;i<times.size();i++){
+            int u=times[i][0]-1;
+            int v=times[i][1]-1;
+            int wt=times[i][2];
+            adj[u].push_back({v,wt});
+        }
+        vector<int>ans=shortest(adj,k-1);
+        int finalAns=INT_MIN;
+        for(auto n : ans){
+            if(n==1e5) return -1;
+            finalAns=max(n,finalAns);
+        }
+        return finalAns; 
     }
 };
