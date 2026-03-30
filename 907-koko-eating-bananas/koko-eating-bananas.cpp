@@ -1,20 +1,22 @@
 class Solution {
 public:
     long long bsa(vector<int>&nums,int k){
-        long long ans=0;
-        for(auto num : nums){
-            ans+=(num+k-1)/k;
-        }
-        return ans;
+       long long ans=0;
+       for(auto num : nums){
+        ans+=(num+(k-1))/k;
+       }
+       return ans;
     }
     int helper(int low,vector<int>&nums,int h,int high){
         while(low<=high){
             long long mid=1LL*low+(high-low)/2;
             long long ans=bsa(nums,mid);
-            if(ans>h){
-                low=mid+1;
+            if(ans<=h){
+                high=mid-1;
             }
-            else high=mid-1;
+            else {
+            low=mid+1;
+            }
         }
         return low;
     }
