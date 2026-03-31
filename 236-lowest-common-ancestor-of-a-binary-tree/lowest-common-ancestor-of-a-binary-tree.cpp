@@ -15,16 +15,10 @@ public:
         }
         TreeNode* left=DFS(root->left,p,q);
         TreeNode* right=DFS(root->right,p,q);
-        if(left==NULL){
-            return right;
-        }
-        else if(right==NULL){
-            return left;
-        }
-        else return root;
+        if(left && right) return root;
+        return (left) ? left : right;
     }
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if(!root) return root;
         return DFS(root,p,q);
     }
 };
