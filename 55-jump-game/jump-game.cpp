@@ -3,14 +3,14 @@ public:
     bool canJump(vector<int>& nums) {
         if(nums.size()==1) return true;
         int maxReach=0;
-        for(int i=0;i<nums.size()-1;i++){
-            if (i > maxReach) return false;
-            int farthest=nums[i]+i;
-            maxReach=max(maxReach,farthest);
-            if(maxReach>=nums.size()-1){
-                return true;
+        for(int i=0;i<nums.size();i++){
+           int farthest=i+nums[i];
+            if(maxReach<i){
+                return false;
             }
+            if(maxReach==nums.size()-1) return true;
+            maxReach=max(maxReach,farthest);
         }
-        return false;
+        return true;
     }
 };
