@@ -1,42 +1,37 @@
 class Solution {
 public:
-    bool helper(int node, vector<vector<int>>& adj, stack<int>& st,
-                vector<int>& visited) {
-        visited[node] = 1;
+    bool topoSort(int node, vector<vector<int>>& adj, vector<int>& ans,
+                 vector<int>& visited) {
+        visited[node]=1;
         for (auto it : adj[node]) {
             if (visited[it] == 0) {
-                if(helper(it, adj, st, visited)) return true;
-            } else if (visited[it] == 1) {
+                if (topoSort(it, adj, ans, visited)) return true;
+            }
+            if (visited[it] == 1) {
                 return true;
             }
         }
         visited[node] = 2;
-        st.push(node);
+        ans.push_back(node);
         return false;
     }
-
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
-        vector<vector<int>> adj(numCourses);
+        vector<vector<int>> adj(numCourses + 1);
         for (int i = 0; i < prerequisites.size(); i++) {
             int u = prerequisites[i][1];
             int v = prerequisites[i][0];
             adj[u].push_back(v);
         }
-        stack<int> st;
+        vector<int> visited(numCourses + 1, 0);
         vector<int> ans;
-        vector<int> visited(numCourses, 0);
-        for (int i = 0; i < adj.size(); i++) {
+        for (int i = 0; i < numCourses; i++) {
             if (visited[i] == 0) {
-                if (helper(i, adj, st, visited)) {
+                if (topoSort(i, adj, ans, visited)) {
                     return {};
                 }
             }
         }
-        while (!st.empty()) {
-            int a = st.top();
-            st.pop();
-            ans.push_back(a);
-        }
+        reverse(ans.begin(),ans.end());
         return ans;
     }
 };
