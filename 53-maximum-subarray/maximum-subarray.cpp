@@ -1,21 +1,21 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
+        int allneg=true;
         int sum=0;
-        bool flag=true;
+        int minNeg=INT_MIN;
         int ans=INT_MIN;
-        int maxEle=INT_MIN;
-        for(auto num : nums){
-            maxEle=max(maxEle,num);
-            if(num>0){
-                flag=false;
+        for(auto n : nums){
+            if(n>=0) allneg=false;
+            if(allneg){
+                minNeg=max(minNeg,n);
             }
-            sum+=num;
+            sum+=n;
             if(sum<0){
                 sum=0;
             }
-            ans=max(ans,sum);
+            ans=max(sum,ans);
         }
-        return (flag) ? maxEle : ans;
+        return (allneg) ? minNeg : ans;
     }
 };
