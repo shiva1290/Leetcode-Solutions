@@ -1,57 +1,3 @@
-<<<<<<< HEAD
-# 57. Insert Interval
-
-## Problem Statement
-
-You are given an array of non-overlapping intervals intervals where intervals[i] = [starti, endi] represent the start and the end of the ith interval and intervals is sorted in ascending order by starti. You are also given an interval newInterval = [start, end] that represents the start and end of another interval.
-
-Insert newInterval into intervals such that intervals is still sorted in ascending order by starti and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).
-
-Return intervals after the insertion.
-
-Note that you don&#39;t need to modify intervals in-place. You can make a new array and return it.
-
-Example 1:
-
-Input: intervals = [[1,3],[6,9]], newInterval = [2,5]
-Output: [[1,5],[6,9]]
-
-Example 2:
-
-Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
-Output: [[1,2],[3,10],[12,16]]
-Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
-
-Constraints:
-
-	0 <= intervals.length <= 104
-	intervals[i].length == 2
-	0 <= starti <= endi <= 105
-	intervals is sorted by starti in ascending order.
-	newInterval.length == 2
-	0 <= start <= end <= 105
-
-## Solution
-
-The solution is implemented in C++ and can be found in the `solution.cpp` file.
-
-## Complexity Analysis
-
-- **Time Complexity:** O(?) - Please analyze and update
-- **Space Complexity:** O(?) - Please analyze and update
-
-## Tags
-
-*Medium*
-
-## LeetCode Link
-
-[57. Insert Interval](https://leetcode.com/problems/insert-interval/)
-
----
-
-*This solution was automatically downloaded from LeetCode.*
-=======
 <h2><a href="https://leetcode.com/problems/insert-interval">Insert Interval</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given an array of non-overlapping intervals <code>intervals</code> where <code>intervals[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> represent the start and the end of the <code>i<sup>th</sup></code> interval and <code>intervals</code> is sorted in ascending order by <code>start<sub>i</sub></code>. You are also given an interval <code>newInterval = [start, end]</code> that represents the start and end of another interval.</p>
 
 <p>Insert <code>newInterval</code> into <code>intervals</code> such that <code>intervals</code> is still sorted in ascending order by <code>start<sub>i</sub></code> and <code>intervals</code> still does not have any overlapping intervals (merge overlapping intervals if necessary).</p>
@@ -87,4 +33,3 @@ The solution is implemented in C++ and can be found in the `solution.cpp` file.
 	<li><code>newInterval.length == 2</code></li>
 	<li><code>0 &lt;= start &lt;= end &lt;= 10<sup>5</sup></code></li>
 </ul>
->>>>>>> 629ea6c387e449327847756aaa3d388d99c4deba
