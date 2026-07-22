@@ -21,18 +21,31 @@ public:
 
 class Solution {
 public:
-    Node* DFS(Node* node,unordered_map<Node*,Node*>&mpp){
-        if(node==NULL) return nullptr;
-        if(mpp.find(node)!=mpp.end()) return mpp[node];
-        Node* clone=new Node(node->val);
-        mpp[node]=clone;
-        for(auto it : node->neighbors){
-            clone->neighbors.push_back(DFS(it,mpp));
+    void DFS(Node* node, Node* clone, unordered_set<Node*>& visited,
+             unordered_map<Node*, Node*>& mpp) {
+        if (!node)
+            return;
+        for (auto n : node->neighbors) {
+            if (visited.count(n) == 0) {
+                visited.insert(n);
+                Node* newNode = new Node(n->val);
+                clone->neighbors.push_back(newNode);
+                mpp[n] = newNode;
+                DFS(n, newNode, visited, mpp);
+            } else {
+                clone->neighbors.push_back(mpp[n]);
+            }
         }
-        return clone;
     }
     Node* cloneGraph(Node* node) {
-        unordered_map<Node*,Node*>mpp;
-        return DFS(node,mpp);
+        if (!node)
+            return nullptr;
+        unordered_set<Node*> visited;
+        unordered_map<Node*, Node*> mpp;
+        Node* cloneNode = new Node(node->val);
+        visited.insert(node);
+        mpp[node] = cloneNode;
+        DFS(node, cloneNode, visited, mpp);
+        return cloneNode;
     }
 };
