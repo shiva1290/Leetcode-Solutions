@@ -1,27 +1,19 @@
 class Solution {
 public:
+    int helper(int x, vector<int>&coins, int amount, vector<vector<int>>&dp){
+        if(amount==0) return 0;
+        if(x==coins.size()) return 1e9;
+        if(dp[x][amount]!=-1) return dp[x][amount];
+        int include=1e9;
+        if(coins[x]<=amount) {
+            include=1+helper(x,coins,amount-coins[x],dp);
+        }
+        int exclude=helper(x+1,coins,amount,dp);
+        return dp[x][amount]=min(include,exclude);
+    }
     int coinChange(vector<int>& coins, int amount) {
-        vector<int> dp (amount + 1, 1e5);
-        for(int am=0;am<=amount;am++){
-            if(am%coins[0]==0)
-            dp[am] = am / coins[0] ;
-        }
-        for (int index = 1; index < coins.size(); index++) {
-            vector<int>curr(amount+1,1e5);
-            curr[0]=0;
-            for (int am = 1; am <= amount; am++) {
-                int takeAgain = INT_MAX;
-                if (am - coins[index] >= 0) {
-                    takeAgain = 1 + curr[am - coins[index]];
-                }
-                int notTake = dp[am];
-                curr[am] = min(takeAgain, notTake);
-            }
-            dp=curr;
-        }
-
-        return dp[amount] == 1e5
-                   ? -1
-                   : dp[amount];
+        vector<vector<int>>dp(coins.size()+1,vector<int>(amount+1,-1));
+        int ans=helper(0,coins,amount,dp);
+        return (ans==1e9) ? -1 : ans;
     }
 };
