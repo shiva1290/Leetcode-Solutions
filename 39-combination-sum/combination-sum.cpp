@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void helper(int index,vector<int>temp,vector<int>& candidates, int target,vector<vector<int>>&ans){
+    void helper(int index,vector<int>&temp,vector<int>& candidates, int target,vector<vector<int>>&ans){
         if(index==candidates.size()) return;
         if(target<=0){
             if(target==0){
