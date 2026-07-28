@@ -1,19 +1,22 @@
 class Solution {
 public:
-    void helper(int index, vector<vector<int>>& ans, vector<int> nums) {
-        if (index == nums.size()) {
-            ans.push_back(nums);
+    void helper(int i, vector<int>& nums, set<vector<int>>& ans) {
+        if (i == nums.size())
             return;
-        }
-        for (int i = index; i < nums.size(); i++) {
-            swap(nums[index], nums[i]);
-            helper(index + 1, ans, nums);
-            swap(nums[index], nums[i]);
+        ans.insert(nums);
+        for (int j = i; j < nums.size(); j++) {
+            swap(nums[i], nums[j]);
+            helper(i + 1, nums, ans);
+            swap(nums[i], nums[j]);
         }
     }
     vector<vector<int>> permute(vector<int>& nums) {
-        vector<vector<int>> ans;
-        helper(0, ans, nums);
-        return ans;
+        set<vector<int>> ans;
+        helper(0, nums, ans);
+        vector<vector<int>> fin;
+        for (auto vec : ans) {
+            fin.push_back(vec);
+        }
+        return fin;
     }
 };
