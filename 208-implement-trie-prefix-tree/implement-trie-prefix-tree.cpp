@@ -10,42 +10,47 @@ public:
         }
         void setEnd() { end = true; }
         bool isEnd() { return end; }
-        bool containsKey(char c) { return links[c - 'a'] != nullptr; }
-        void putKey(char c, Node* node) { links[c - 'a'] = node; }
+        bool containsKey(char c){
+            return links[c-'a']!=nullptr;
+        }
+        void setKey(char c,Node* node){
+            links[c-'a']=node;
+            return;
+        }
     };
-
     Node* root;
-    Trie() { root = new Node(); }
-
-    void insert(string word) {
-        Node* node = root;
-        for (int i = 0; i < word.size(); i++) {
-            if (!node->containsKey(word[i])) {
-                node->putKey(word[i], new Node());
+    Trie() {
+        root=new Node();
+    }
+    void insert(string word) { 
+        Node* node=root;
+        for(auto ch :  word){
+            if(!node->containsKey(ch)){
+                node->setKey(ch,new Node());
             }
-            node = node->links[word[i] - 'a'];
+            node=node->links[ch-'a'];
         }
         node->setEnd();
     }
 
     bool search(string word) {
-        Node* node = root;
-        for (int i = 0; i < word.size(); i++) {
-            if (!node->containsKey(word[i])) {
+        Node* node=root;
+        for(auto ch: word){
+            if(!node->containsKey(ch)){
                 return false;
             }
-            node = node->links[word[i] - 'a'];
+               node=node->links[ch-'a'];
         }
         return node->isEnd();
     }
 
     bool startsWith(string prefix) {
-        Node* node = root;
-        for (int i = 0; i < prefix.size(); i++) {
-            if (!node->containsKey(prefix[i])) {
+         Node* node=root;
+        for(auto ch: prefix){
+            if(!node->containsKey(ch)){
                 return false;
             }
-            node = node->links[prefix[i] - 'a'];
+              node=node->links[ch-'a'];
         }
         return true;
     }
