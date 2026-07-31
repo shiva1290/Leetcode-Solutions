@@ -1,39 +1,36 @@
 class Solution {
 public:
+    bool containsWord(unordered_map<char, int>& mpp,
+                      unordered_map<char, int>& mpp2) {
+        for (auto& [key, value] : mpp) {
+            if (mpp2[key] < value)
+                return false;
+        }
+        return true;
+    }
     string minWindow(string s, string t) {
-        int startIndex = -1;
-        int l = 0;
-        int r = 0;
-        int freq[256];
-
-        for (char c : t) {
-            freq[c]++;
+        if (t.length() > s.length())
+            return "";
+        int i = 0;
+        unordered_map<char, int> mpp;
+        unordered_map<char, int> mpp2;
+        for (auto ch : t) {
+            mpp[ch]++;
         }
-
-        int cnt = 0;
-        int minLen = INT_MAX;
-
-        while (r < s.size()) {
-
-            if (freq[s[r]] > 0) {
-                cnt++;
-            }
-
-            freq[s[r]]--;
-        
-            while (cnt == t.size()) {
-                if (r - l + 1 < minLen) {
-                    minLen = r - l + 1;
-                    startIndex = l;
+        int minLength = INT_MAX;
+        int start=-1;
+        string ans;
+        for (int j = 0; j < s.size(); j++) {
+            mpp2[s[j]]++;
+            while (i<=j && containsWord(mpp, mpp2)) {
+                if (minLength > j - i + 1) {
+                    minLength=j-i+1;
+                    start=i;
                 }
-                freq[s[l]]++;
-                if (freq[s[l]] > 0) {
-                    cnt--;
-                }
-                l++;
+                mpp2[s[i]]--;
+                i++;
             }
-            r++;
         }
-    return (startIndex==-1) ? "" : s.substr(startIndex,minLen);
+        return (start==-1) ? "" : s.substr(start,minLength);
     }
 };
