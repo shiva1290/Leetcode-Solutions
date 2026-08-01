@@ -1,45 +1,28 @@
-# 297. Serialize and Deserialize Binary Tree
+<h2><a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree">Serialize and Deserialize Binary Tree</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.</p>
 
-## Problem Statement
+<p>Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.</p>
 
-Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.
+<p><strong>Clarification:</strong> The input/output format is the same as <a href="https://support.leetcode.com/hc/en-us/articles/32442719377939-How-to-create-test-cases-on-LeetCode#h_01J5EGREAW3NAEJ14XC07GRW1A" target="_blank">how LeetCode serializes a binary tree</a>. You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.</p>
 
-Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/09/15/serdeser.jpg" style="width: 442px; height: 324px;" />
+<pre>
+<strong>Input:</strong> root = [1,2,3,null,null,4,5]
+<strong>Output:</strong> [1,2,3,null,null,4,5]
+</pre>
 
-Clarification: The input/output format is the same as how LeetCode serializes a binary tree. You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.
+<p><strong class="example">Example 2:</strong></p>
 
-Example 1:
+<pre>
+<strong>Input:</strong> root = []
+<strong>Output:</strong> []
+</pre>
 
-Input: root = [1,2,3,null,null,4,5]
-Output: [1,2,3,null,null,4,5]
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-Example 2:
-
-Input: root = []
-Output: []
-
-Constraints:
-
-	The number of nodes in the tree is in the range [0, 104].
-	-1000 <= Node.val <= 1000
-
-## Solution
-
-The solution is implemented in C++ and can be found in the `solution.cpp` file.
-
-## Complexity Analysis
-
-- **Time Complexity:** O(?) - Please analyze and update
-- **Space Complexity:** O(?) - Please analyze and update
-
-## Tags
-
-*Hard*
-
-## LeetCode Link
-
-[297. Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
-
----
-
-*This solution was automatically downloaded from LeetCode.*
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[0, 10<sup>4</sup>]</code>.</li>
+	<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+</ul>
