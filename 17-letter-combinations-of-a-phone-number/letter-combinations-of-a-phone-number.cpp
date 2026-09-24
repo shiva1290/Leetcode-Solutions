@@ -1,23 +1,24 @@
 class Solution {
 public:
-    void helper(int index, string digits, vector<string>& alphabets,
-                vector<string>& ans, string s) {
-        if (index == digits.size()) {
-            ans.push_back(s);
+    void helper(int index, string digits, vector<string> combos,
+                vector<string>& ans, string temp) {
+        if (index >= digits.size()) {
+            ans.push_back(temp);
             return;
         }
-        int digit = digits[index] - '2';
-
-        for (int i = 0; i < alphabets[digit].size(); i++) {
-            helper(index + 1, digits, alphabets, ans, s + alphabets[digit][i]);
+        int digit = (digits[index]) - '0';
+        for (int i = 0; i < combos[digit].size(); i++) {
+            temp.push_back(combos[digit][i]);
+            helper(index + 1, digits, combos, ans, temp);
+            temp.pop_back();
         }
     }
     vector<string> letterCombinations(string digits) {
-        vector<string> alphabets = {"abc", "def",  "ghi", "jkl",
-                                    "mno", "pqrs", "tuv", "wxyz"};
+        vector<string> combos = {"",    "",    "abc",  "def", "ghi",
+                                 "jkl", "mno", "pqrs", "tuv", "wxyz"};
         vector<string> ans;
-        string s;
-        helper(0, digits, alphabets, ans, s);
+        string temp;
+        helper(0, digits, combos, ans, temp);
         return ans;
     }
 };
